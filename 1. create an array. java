@@ -1,0 +1,26 @@
+import java.util.Random;
+
+public class ShuffleArray {
+    public static void main(String[] args) {
+        int[] originalArray = {1, 2, 3, 4, 5, 6, 7};
+
+        // Create a random object to generate random numbers
+        Random random = new Random();
+
+        // Shuffle the array
+        for (int i = originalArray.length - 1; i > 0; i--) {
+            // Generate a random index between 0 and i (inclusive)
+            int randomIndex = random.nextInt(i + 1);
+
+            // Swap the elements at randomIndex and i
+            int temp = originalArray[i];
+            originalArray[i] = originalArray[randomIndex];
+            originalArray[randomIndex] = temp;
+        }
+
+        // Print the shuffled array
+        for (int number : originalArray) {
+            System.out.print(number + " ");
+        }
+    }
+}
